@@ -37,7 +37,6 @@ public class OnlyProxyJoin extends PluginBase implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPreLogin(PlayerPreLoginEvent event) {
         Player player = event.getPlayer();
-        player.setCheckMovement(false);
         if(getConfig().getBoolean("use-proxy")) {
             if(!player.getAddress().equals(getConfig().getString("proxy-ip"))) {
                 event.setKickMessage(getConfig().getString("kick-message"));
